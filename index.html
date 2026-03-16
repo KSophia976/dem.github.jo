@@ -6,9 +6,9 @@
   <title>✨ Блог Sophy | Путь в тысячу миль</title>
   
   <!-- Подключаем красивый шрифт Google Fonts (на всякий случай, если Pudelinka не загрузится) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com  ">
+  <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat  :wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* Сброс стилей */
@@ -211,6 +211,37 @@
       margin-top: 10px;
     }
 
+    /* Стили для таблицы прогнозов */
+    .prediction-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .prediction-table th,
+    .prediction-table td {
+      padding: 10px 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .prediction-table th {
+      background: rgba(255, 255, 255, 0.15);
+      font-weight: 600;
+    }
+    
+    .prediction-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .highlight {
+      background: rgba(255, 217, 61, 0.2);
+      font-weight: 600;
+    }
+
     /* Адаптивность */
     @media (max-width: 768px) {
       .header h1 {
@@ -259,8 +290,44 @@
         <span class="tag">#шифры</span>
         <span class="tag">#RSA</span>
         <span class="tag">#чатбот</span>
+        <span class="tag">#ML</span>
       </div>
     </header>
+
+    <!-- 🆕 НОВЫЙ ПОСТ: 16 марта 2026 -->
+    <article class="post" style="border-left: 4px solid #ffd93d;">
+      <div class="post-date">📊 16 марта 2026</div>
+      <h2 class="post-title">Прогноз баллов с помощью линейной регрессии</h2>
+      <div class="post-content">
+        <p>🎯 <strong>Результат для студента:</strong></p>
+        <ul style="margin: 10px 0 15px 20px;">
+          <li>Часы подготовки: <strong>5 часов</strong></li>
+          <li>Прогноз баллов: <strong>50.23</strong> ✨</li>
+        </ul>
+        
+        <p>📋 <strong>Таблица прогнозов:</strong></p>
+        <table class="prediction-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Часы подготовки</th>
+              <th>Прогноз баллов</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>1</td><td>12.32</td></tr>
+            <tr><td>1</td><td>3</td><td>31.28</td></tr>
+            <tr class="highlight"><td>2</td><td>5</td><td>50.23 ⭐</td></tr>
+            <tr><td>3</td><td>7</td><td>69.19</td></tr>
+            <tr><td>4</td><td>10</td><td>97.62</td></tr>
+          </tbody>
+        </table>
+        
+        <p style="font-size: 0.9em; opacity: 0.8;">
+          <em>Модель: LinearRegression | R² = 0.998 | MAE = 1.24</em>
+        </p>
+      </div>
+    </article>
 
     <!-- Пост: 1 декабря 2025 -->
     <article class="post">
@@ -292,7 +359,7 @@
       <div class="post-content">
         <blockquote>«Путешествие в тысячу миль начинается с одного шага» (Лао Цзы)</blockquote>
         <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины.</p>
-        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-">Flaticon</a></small></p>
+        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-  ">Flaticon</a></small></p>
       </div>
     </article>
 
@@ -378,7 +445,7 @@
 
     <!-- СЕГОДНЯ: 21 февраля 2026 (чат-бот) -->
     <article class="post" style="border-left: 4px solid #4caf50;">
-      <div class="post-date">🤖 21 февраля 2026 (сегодня)</div>
+      <div class="post-date">🤖 21 февраля 2026</div>
       <h2 class="post-title">Чат-бот в деле</h2>
       <div class="post-content">
         <div class="chat-log">
