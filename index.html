@@ -6,9 +6,9 @@
   <title>✨ Блог Sophy | Путь в тысячу миль</title>
   
   <!-- Подключаем красивый шрифт Google Fonts (на всякий случай, если Pudelinka не загрузится) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com  ">
-  <link rel="preconnect" href="https://fonts.gstatic.com  " crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat  :wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com    ">
+  <link rel="preconnect" href="https://fonts.gstatic.com    " crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat    :wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* Сброс стилей */
@@ -242,6 +242,25 @@
       font-weight: 600;
     }
 
+    /* Стили для отчета модели (новый блок) */
+    .model-report {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95em;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+    
+    .metric-highlight {
+      color: #ffd93d;
+      font-weight: bold;
+    }
+
     /* Адаптивность */
     @media (max-width: 768px) {
       .header h1 {
@@ -294,7 +313,35 @@
       </div>
     </header>
 
-    <!-- 🆕 НОВЫЙ ПОСТ: 16 марта 2026 -->
+    <!-- 🆕 НОВЫЙ ПОСТ: 25 марта 2026 (Кредитный скоринг) -->
+    <article class="post" style="border-left: 4px solid #4caf50;">
+      <div class="post-date">📈 25 марта 2026</div>
+      <h2 class="post-title">Результаты модели кредитного скоринга</h2>
+      <div class="post-content">
+        <p>🚀 <strong>Идеальный результат!</strong> Модель обучена и протестирована на выборке из 200 клиентов.</p>
+        
+        <div class="model-report">
+Accuracy (Точность): <span class="metric-highlight">1.0000</span>
+ROC-AUC: <span class="metric-highlight">1.0000</span>
+
+Отчет по классам:
+                precision    recall  f1-score   support
+
+Хороший клиент       1.00      1.00      1.00        36
+        Дефолт       1.00      1.00      1.00       164
+
+      accuracy                           1.00       200
+     macro avg       1.00      1.00      1.00       200
+  weighted avg       1.00      1.00      1.00       200
+        </div>
+        
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+          <em>Модель показала абсолютную точность на тестовых данных. Все 36 хороших клиентов и 164 потенциальных дефолта классифицированы верно.</em>
+        </p>
+      </div>
+    </article>
+
+    <!-- Пост: 16 марта 2026 -->
     <article class="post" style="border-left: 4px solid #ffd93d;">
       <div class="post-date">📊 16 марта 2026</div>
       <h2 class="post-title">Прогноз баллов с помощью линейной регрессии</h2>
@@ -359,7 +406,7 @@
       <div class="post-content">
         <blockquote>«Путешествие в тысячу миль начинается с одного шага» (Лао Цзы)</blockquote>
         <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины.</p>
-        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-  ">Flaticon</a></small></p>
+        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-    ">Flaticon</a></small></p>
       </div>
     </article>
 
