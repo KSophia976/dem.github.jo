@@ -1,48 +1,614 @@
-    <!-- 🆕 НОВЫЙ ПОСТ: Результаты обучения нейросети с 4-м признаком -->
-    <article class="post" style="border-left: 4px solid #9b59b6;">
-      <div class="post-date">🧠 30 марта 2026</div>
-      <h2 class="post-title">Нейросеть: добавление 4-го признака</h2>
+<title>✨ Блог Sophy | Путь в тысячу миль</title>
+  
+  <!-- Подключаем красивый шрифт Google Fonts (на всякий случай, если Pudelinka не загрузится) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com    ">
+  <link rel="preconnect" href="https://fonts.gstatic.com    " crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat    :wght@300;400;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Сброс стилей */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Подключение шрифта Pudelinka */
+    @font-face {
+      font-family: 'Pudelinka';
+      src: url('fonts/Pudelinka.woff2') format('woff2'),
+           url('fonts/Pudelinka.woff') format('woff'),
+           url('fonts/Pudelinka.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    body {
+      font-family: 'Pudelinka', 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #ff6b6b 100%);
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Контейнер для контента */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Шапка */
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+
+    .header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .header .quote {
+      font-size: 1.2em;
+      opacity: 0.9;
+      font-style: italic;
+    }
+
+    /* Карточки постов */
+    .post {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .post-date {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .post-title {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .post-content {
+      font-size: 1.1em;
+    }
+
+    /* Стили для ссылок */
+    a {
+      color: #ffd93d;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
+    }
+
+    a:hover {
+      color: #ffaa00;
+      text-decoration: underline;
+    }
+
+    /* Стили для изображений */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin: 15px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Стили для цитат */
+    blockquote {
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 4px solid #ffd93d;
+      padding: 15px 20px;
+      margin: 15px 0;
+      border-radius: 10px;
+      font-style: italic;
+      font-size: 1.1em;
+    }
+
+    /* Кнопки */
+    .btn {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin: 5px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      font-size: 1em;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+
+    /* Поле ввода */
+    .input-field {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 30px;
+      width: 200px;
+      font-family: inherit;
+      margin: 10px 0;
+    }
+
+    .input-field::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .input-field:focus {
+      outline: none;
+      border-color: #ffd93d;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Чат-бот сообщение */
+    .chat-log {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px 0;
+      border-left: 4px solid #4caf50;
+    }
+
+    .chat-question {
+      color: #ffd93d;
+      font-weight: bold;
+    }
+
+    .chat-answer {
+      color: #a5d6a5;
+    }
+
+    /* Тэги */
+    .tag {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      margin-right: 8px;
+      margin-top: 10px;
+    }
+
+    /* Стили для таблицы прогнозов */
+    .prediction-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .prediction-table th,
+    .prediction-table td {
+      padding: 10px 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .prediction-table th {
+      background: rgba(255, 255, 255, 0.15);
+      font-weight: 600;
+    }
+    
+    .prediction-table tr:hover {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .highlight {
+      background: rgba(255, 217, 61, 0.2);
+      font-weight: 600;
+    }
+
+    /* Стили для отчета модели (новый блок) */
+    .model-report {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.95em;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.4;
+    }
+    
+    .metric-highlight {
+      color: #ffd93d;
+      font-weight: bold;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .header h1 {
+        font-size: 2em;
+      }
+      
+      .post {
+        padding: 15px;
+      }
+      
+      .post-title {
+        font-size: 1.4em;
+      }
+    }
+
+    /* Анимация для новогоднего настроения */
+    @keyframes snowflake {
+      0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .snowflake {
+      position: fixed;
+      color: white;
+      user-select: none;
+      pointer-events: none;
+      opacity: 0.7;
+      font-size: 1.5em;
+      animation: snowflake linear infinite;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Снежинки (новогодняя атмосфера) -->
+  <div id="snowflakes-container"></div>
+
+  <div class="container">
+    <!-- Шапка блога -->
+    <header class="header">
+      <h1>✧ Мой космический блог ✧</h1>
+      <div class="quote">«Путешествие в тысячу миль начинается с одного шага» — Лао Цзы</div>
+      <div style="margin-top: 15px;">
+        <span class="tag">#новыйгод2026</span>
+        <span class="tag">#шифры</span>
+        <span class="tag">#RSA</span>
+        <span class="tag">#чатбот</span>
+        <span class="tag">#ML</span>
+        <span class="tag">#КАСКО</span>
+      </div>
+    </header>
+
+    <!-- 🆕 НОВЫЙ ПОСТ: 25 марта 2026 (Датасет КАСКО) -->
+    <article class="post" style="border-left: 4px solid #ff9f43;">
+      <div class="post-date">🚗 25 марта 2026</div>
+      <h2 class="post-title">Генерация датасета для страхования КАСКО</h2>
       <div class="post-content">
-        <p>🔬 <strong>Эксперимент:</strong> Добавлен полиномиальный признак (квадрат первого признака) для улучшения качества модели.</p>
+        <p>🤖 <strong>Результат работы скрипта:</strong> Сгенерировано 1000 записей на основе возраста, стажа и истории ДТП.</p>
         
-        <p>📐 <strong>Архитектура сети:</strong></p>
-        <ul style="margin: 10px 0 15px 20px;">
-          <li>Входной слой: <strong>4 нейрона</strong> (было 3)</li>
-          <li>Скрытый слой: <strong>2 нейрона</strong></li>
-          <li>Выходной слой: <strong>1 нейрон</strong></li>
-          <li>Функция активации: <strong>Sigmoid</strong></li>
-          <li>Оптимизатор: <strong>SGD</strong>, lr = 0.1</li>
-        </ul>
+        <p>📋 <strong>Первые 10 записей датасета:</strong></p>
+        <table class="prediction-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>age</th>
+              <th>driving_experience_years</th>
+              <th>accidents_count</th>
+              <th>casco_available</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>40</td><td>22</td><td>0</td><td>Да</td></tr>
+            <tr><td>1</td><td>33</td><td>11</td><td>1</td><td>Да</td></tr>
+            <tr><td>2</td><td>42</td><td>16</td><td>1</td><td>Да</td></tr>
+            <tr><td>3</td><td>53</td><td>10</td><td>1</td><td>Да</td></tr>
+            <tr><td>4</td><td>32</td><td>12</td><td>1</td><td>Да</td></tr>
+            <tr><td>5</td><td>32</td><td>2</td><td>3</td><td>Да</td></tr>
+            <tr><td>6</td><td>53</td><td>5</td><td>1</td><td>Да</td></tr>
+            <tr><td>7</td><td>44</td><td>8</td><td>0</td><td>Да</td></tr>
+            <tr><td>8</td><td>29</td><td>5</td><td>0</td><td>Да</td></tr>
+            <tr><td>9</td><td>41</td><td>8</td><td>2</td><td>Да</td></tr>
+          </tbody>
+        </table>
 
-        <p>📉 <strong>Динамика ошибки (MSE) в процессе обучения:</strong></p>
-        
         <div class="model-report">
-Новая форма X_train: (900, 4)
-
-Эпоха    0 | Ошибка (MSE): <span class="metric-highlight">0.023397</span>
-Эпоха  100 | Ошибка (MSE): <span class="metric-highlight">0.019289</span>
-Эпоха  200 | Ошибка (MSE): <span class="metric-highlight">0.019270</span>
-Эпоха  300 | Ошибка (MSE): <span class="metric-highlight">0.019262</span>
-Эпоха  400 | Ошибка (MSE): <span class="metric-highlight">0.019256</span>
-Эпоха  500 | Ошибка (MSE): <span class="metric-highlight">0.019252</span>
-Эпоха  600 | Ошибка (MSE): <span class="metric-highlight">0.019248</span>
-Эпоха  700 | Ошибка (MSE): <span class="metric-highlight">0.019245</span>
-Эпоха  800 | Ошибка (MSE): <span class="metric-highlight">0.019241</span>
-Эпоха  900 | Ошибка (MSE): <span class="metric-highlight">0.019238</span>
+Статистика доступности КАСКО:
+casco_available
+Да     853
+Нет    147
+Name: count, dtype: int64
         </div>
         
-        <p style="margin-top: 15px;">
-          <strong>📊 Выводы:</strong><br>
-          • Ошибка снизилась с <strong>0.0234</strong> до <strong>0.0192</strong> (~17.8% улучшение)<br>
-          • Сходимость стабильная, переобучения не наблюдается<br>
-          • Добавление полиномиального признака помогло модели уловить нелинейную зависимость
-        </p>
-        
-        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 10px;">
-          <em>💡 Совет: для дальнейшего улучшения можно попробовать добавить взаимодействие признаков или увеличить размер скрытого слоя.</em>
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+          <em>Большинство водителей (85.3%) получили одобрение. Отказ чаще всего связан с количеством ДТП (>3) или очень малым стажем вождения.</em>
         </p>
       </div>
     </article>
 
-    <!-- 🆕 НОВЫЙ ПОСТ: 25 марта 2026 (Датасет КАСКО) -->
-    <article class="post" style="border-left: 4px solid #ff9f43;">
+    <!-- Пост: 25 марта 2026 (Кредитный скоринг) - перемещен ниже -->
+    <article class="post" style="border-left: 4px solid #4caf50;">
+      <div class="post-date">📈 25 марта 2026</div>
+      <h2 class="post-title">Результаты модели кредитного скоринга</h2>
+      <div class="post-content">
+        <p>🚀 <strong>Идеальный результат!</strong> Модель обучена и протестирована на выборке из 200 клиентов.</p>
+        
+        <div class="model-report">
+Accuracy (Точность): <span class="metric-highlight">1.0000</span>
+ROC-AUC: <span class="metric-highlight">1.0000</span>
+
+Отчет по классам:
+                precision    recall  f1-score   support
+
+Хороший клиент       1.00      1.00      1.00        36
+        Дефолт       1.00      1.00      1.00       164
+
+      accuracy                           1.00       200
+     macro avg       1.00      1.00      1.00       200
+  weighted avg       1.00      1.00      1.00       200
+        </div>
+        
+        <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+          <em>Модель показала абсолютную точность на тестовых данных. Все 36 хороших клиентов и 164 потенциальных дефолта классифицированы верно.</em>
+        </p>
+      </div>
+    </article>
+
+    <!-- Пост: 16 марта 2026 -->
+    <article class="post" style="border-left: 4px solid #ffd93d;">
+      <div class="post-date">📊 16 марта 2026</div>
+      <h2 class="post-title">Прогноз баллов с помощью линейной регрессии</h2>
+      <div class="post-content">
+        <p>🎯 <strong>Результат для студента:</strong></p>
+        <ul style="margin: 10px 0 15px 20px;">
+          <li>Часы подготовки: <strong>5 часов</strong></li>
+          <li>Прогноз баллов: <strong>50.23</strong> ✨</li>
+        </ul>
+        
+        <p>📋 <strong>Таблица прогнозов:</strong></p>
+        <table class="prediction-table">
+          <thead>
+            <tr>
+              <th>№</th>
+              <th>Часы подготовки</th>
+              <th>Прогноз баллов</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>0</td><td>1</td><td>12.32</td></tr>
+            <tr><td>1</td><td>3</td><td>31.28</td></tr>
+            <tr class="highlight"><td>2</td><td>5</td><td>50.23 ⭐</td></tr>
+            <tr><td>3</td><td>7</td><td>69.19</td></tr>
+            <tr><td>4</td><td>10</td><td>97.62</td></tr>
+          </tbody>
+        </table>
+        
+        <p style="font-size: 0.9em; opacity: 0.8;">
+          <em>Модель: LinearRegression | R² = 0.998 | MAE = 1.24</em>
+        </p>
+      </div>
+    </article>
+
+    <!-- Пост: 1 декабря 2025 -->
+    <article class="post">
+      <div class="post-date">🎄 1 декабря 2025</div>
+      <h2 class="post-title">Новогоднее настроение</h2>
+      <div class="post-content">
+        <img src="icons/free-icon-christmas-tree-4060984.png" alt="Новогодняя ёлка" width="200">
+        <p>Поздравление с Наступающим 2026 годом читайте <a href="Congratulations2026.html">здесь</a>.</p>
+      </div>
+    </article>
+
+    <!-- Пост: 15 октября 2025 -->
+    <article class="post">
+      <div class="post-date">🧩 15 октября 2025</div>
+      <h2 class="post-title">Новогодние кроссворды</h2>
+      <div class="post-content">
+        <p>
+          <a href="krossvordRU.html" class="btn">🇷🇺 Русский кроссворд</a>
+          <a href="krossvordEN.html" class="btn">🇬🇧 Английский кроссворд</a>
+        </p>
+        <p>Я сделала новогодние кроссворды для сайта <a href="http://stratdaria.github.io/Hello-world/" title="Блог моего друга">друга</a>.</p>
+      </div>
+    </article>
+
+    <!-- Пост: 1 сентября 2025 -->
+    <article class="post">
+      <div class="post-date">📚 1 сентября 2025</div>
+      <h2 class="post-title">Начало пути</h2>
+      <div class="post-content">
+        <blockquote>«Путешествие в тысячу миль начинается с одного шага» (Лао Цзы)</blockquote>
+        <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины.</p>
+        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-    ">Flaticon</a></small></p>
+      </div>
+    </article>
+
+    <!-- Пост: 20 декабря 2025 -->
+    <article class="post">
+      <div class="post-date">🎵 20 декабря 2025</div>
+      <h2 class="post-title">Рождественские колядки</h2>
+      <div class="post-content">
+        <p>Поздравляю с наступающим Рождеством 2026!</p>
+        <p>
+          <a href="019b3a72-225b-7fb5-8436-78f9a4ad15dd.mp4" class="btn">▶️ Видео с колядкой</a>
+          <a href="Поздравление с Рождеством" download class="btn">📄 Документ с колядкой</a>
+        </p>
+      </div>
+    </article>
+
+    <!-- Пост: 14 января 2026 -->
+    <article class="post">
+      <div class="post-date">🌐 14 января 2026</div>
+      <h2 class="post-title">Контакты</h2>
+      <div class="post-content">
+        <p>Домен: <strong>KSophia976.github.io</strong></p>
+        <p><a href="mailto:fraskop976@yandex.ru" class="btn">📧 Напишите мне</a></p>
+      </div>
+    </article>
+
+    <!-- Пост: 19 января 2026 -->
+    <article class="post">
+      <div class="post-date">🔐 19 января 2026</div>
+      <h2 class="post-title">Шифр Цезаря</h2>
+      <div class="post-content">
+        <p><strong>1. Ключи:</strong><br>
+        а. АПЕЛЬСИН → САЦЬНВЩЮ, k = 18<br>
+        б. АБРИКОС → ЫЬЛГЕЙМ, k = 28</p>
+        <p><strong>2. Расшифровка:</strong><br>
+        а. ФХНЗКЧ → ПРИВЕТ (k = 5)<br>
+        б. ЦЩЕБФ → ВЕСНА (k = 20)</p>
+        <p><strong>3. Фамилия (Кузьмина, k=10):</strong> ФЭСЖЦТЧК</p>
+      </div>
+    </article>
+
+    <!-- Пост: 21 января 2026 -->
+    <article class="post">
+      <div class="post-date">🤔 21 января 2026</div>
+      <h2 class="post-title">Мысли о шифровании</h2>
+      <div class="post-content">
+        <p style="font-style: italic; opacity: 0.9;">
+          «Вы думаете, что шифруете сообщение, а на самом деле просто возводите двойку в третью степень и делите на 15 — 
+          но не переживайте, в реальности всё чуть сложнее (и да, хакеры уже спят спокойно)».
+        </p>
+      </div>
+    </article>
+
+    <!-- Пост: RSA шифрование -->
+    <article class="post">
+      <div class="post-date">🔢 RSA</div>
+      <h2 class="post-title">Учебный пример RSA</h2>
+      <div class="post-content">
+        <p>m = 2 означает «анализ готов» (2 < 15 ✅)</p>
+        <p>Открытый ключ: (e=3, n=15) | Закрытый: d=3</p>
+        
+        <label>Введите m или C:</label><br>
+        <input type="text" id="input" value="2" class="input-field"><br>
+        
+        <button onclick="encrypt()" class="btn">🔒 Зашифровать</button>
+        <button onclick="decrypt()" class="btn">🔓 Расшифровать</button>
+        
+        <pre id="output" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; margin-top: 15px;"></pre>
+        
+        <p style="font-size: 0.8em; opacity: 0.7; word-break: break-all;">n = 259102381787105367293057583697233129367946271257193911301150513669377139993314021329683872638127121339361292933959411577748733119954791126133331553599236134181343727120145903121911025191911111712511911111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111......</p>
+      </div>
+    </article>
+
+    <!-- Пост: 17 февраля 2026 -->
+    <article class="post">
+      <div class="post-date">🔮 17 февраля 2026</div>
+      <h2 class="post-title">Предсказания</h2>
+      <div class="post-content">
+        <img src="icons/DSC00961.jpg" alt="Фото предсказаний">
+        <p><strong>Топ-3:</strong> match 36.48%, hammer 19.86%, maraca 14.05%</p>
+      </div>
+    </article>
+
+    <!-- СЕГОДНЯ: 21 февраля 2026 (чат-бот) -->
+    <article class="post" style="border-left: 4px solid #4caf50;">
+      <div class="post-date">🤖 21 февраля 2026</div>
+      <h2 class="post-title">Чат-бот в деле</h2>
+      <div class="post-content">
+        <div class="chat-log">
+          <p><span class="chat-question">❓ Пользователь:</span> Сколько ждать мой заказ?</p>
+          <p><span class="chat-question">🔍 Найден FAQ:</span> «Как быстро доставляется заказ?» (sim=0.706)</p>
+          <p><span class="chat-answer">🤖 Ответ бота:</span> Наш стандартный срок доставки — 3–5 рабочих дней.</p>
+          <p style="margin-top: 15px;"><span class="chat-question">❓ Ещё вопрос:</span> Как оплатить заказ?</p>
+          <p style="background: rgba(255, 193, 7, 0.2); padding: 8px; border-radius: 8px;">
+            ⭐ <strong>Оценка:</strong> Чат-бот справился с первым вопросом! По второму нужно обучить отдельно.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Подвал -->
+    <footer style="text-align: center; padding: 30px; opacity: 0.8;">
+      <p>✧ Сделано с ❤️ и Pudelinka шрифтом ✧</p>
+    </footer>
+  </div>
+
+  <!-- Скрипт для снежинок -->
+  <script>
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.innerHTML = ['❄️','❄️','❄️','✨','❄️'][Math.floor(Math.random() * 5)];
+      snowflake.style.left = Math.random() * 100 + 'vw';
+      snowflake.style.animationDuration = Math.random() * 5 + 5 + 's';
+      snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+      snowflake.style.opacity = Math.random() * 0.7 + 0.3;
+      document.getElementById('snowflakes-container').appendChild(snowflake);
+      
+      setTimeout(() => {
+        snowflake.remove();
+      }, 10000);
+    }
+
+    setInterval(createSnowflake, 300);
+
+    // RSA скрипт
+    const e = 3, d = 3, n = 15;
+
+    function modExp(base, exp, mod) {
+      let result = 1;
+      base = base % mod;
+      while (exp > 0) {
+        if (exp % 2 === 1) result = (result * base) % mod;
+        exp = Math.floor(exp / 2);
+        base = (base * base) % mod;
+      }
+      return result;
+    }
+
+    function encrypt() {
+      const input = document.getElementById('input').value.trim();
+      const m = Number(input);
+      if (isNaN(m) || !Number.isInteger(m) || m < 0 || m >= n) {
+        document.getElementById('output').innerText = '❌ Ошибка: m должно быть целым от 0 до 14';
+        return;
+      }
+      document.getElementById('output').innerText = 
+        `🔐 Шифрование: C = ${m}^${e} mod ${n} = ${modExp(m, e, n)}`;
+    }
+
+    function decrypt() {
+      const input = document.getElementById('input').value.trim();
+      const C = Number(input);
+      if (isNaN(C) || !Number.isInteger(C) || C < 0 || C >= n) {
+        document.getElementById('output').innerText = '❌ Ошибка: C должно быть целым от 0 до 14';
+        return;
+      }
+      document.getElementById('output').innerText = 
+        `🔓 Расшифровка: m = ${C}^${d} mod ${n} = ${modExp(C, d, n)}`;
+    }
+  </script>
+</body>
+</html>
