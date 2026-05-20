@@ -1,19 +1,20 @@
-<title>✨ Блог Sophy | Путь в тысячу миль</title>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Блог Sophy | Путь в тысячу миль</title>
   
-  <!-- Подключаем красивый шрифт Google Fonts (на всякий случай, если Pudelinka не загрузится) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com    ">
-  <link rel="preconnect" href="https://fonts.gstatic.com    " crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat    :wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Подключаем красивый шрифт Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <style>
     /* Сброс стилей */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    /* Подключение шрифта Pudelinka */
+    /* Подключение шрифта Pudelinka (локальный) */
     @font-face {
       font-family: 'Pudelinka';
       src: url('fonts/Pudelinka.woff2') format('woff2'),
@@ -33,11 +34,7 @@
       padding: 20px;
     }
 
-    /* Контейнер для контента */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+    .container { max-width: 900px; margin: 0 auto; }
 
     /* Шапка */
     .header {
@@ -51,17 +48,8 @@
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
 
-    .header h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .header .quote {
-      font-size: 1.2em;
-      opacity: 0.9;
-      font-style: italic;
-    }
+    .header h1 { font-size: 3em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
+    .header .quote { font-size: 1.2em; opacity: 0.9; font-style: italic; }
 
     /* Карточки постов */
     .post {
@@ -91,51 +79,25 @@
       border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .post-title {
-      font-size: 1.8em;
-      margin-bottom: 15px;
-      color: #fff;
-    }
+    .post-title { font-size: 1.8em; margin-bottom: 15px; color: #fff; }
+    .post-content { font-size: 1.1em; }
 
-    .post-content {
-      font-size: 1.1em;
-    }
+    /* Ссылки и кнопки */
+    a { color: #ffd93d; text-decoration: none; transition: color 0.3s; font-weight: 600; }
+    a:hover { color: #ffaa00; text-decoration: underline; }
 
-    /* Стили для ссылок */
-    a {
-      color: #ffd93d;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-weight: 600;
-    }
-
-    a:hover {
-      color: #ffaa00;
-      text-decoration: underline;
-    }
-
-    /* Стили для изображений */
     img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 15px;
-      margin: 15px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      max-width: 100%; height: auto; border-radius: 15px;
+      margin: 15px 0; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       border: 2px solid rgba(255, 255, 255, 0.2);
     }
 
-    /* Стили для цитат */
     blockquote {
-      background: rgba(0, 0, 0, 0.2);
-      border-left: 4px solid #ffd93d;
-      padding: 15px 20px;
-      margin: 15px 0;
-      border-radius: 10px;
-      font-style: italic;
-      font-size: 1.1em;
+      background: rgba(0, 0, 0, 0.2); border-left: 4px solid #ffd93d;
+      padding: 15px 20px; margin: 15px 0; border-radius: 10px;
+      font-style: italic; font-size: 1.1em;
     }
 
-    /* Кнопки */
     .btn {
       display: inline-block;
       background: rgba(255, 255, 255, 0.2);
@@ -149,13 +111,8 @@
       font-family: inherit;
       font-size: 1em;
     }
+    .btn:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.05); }
 
-    .btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: scale(1.05);
-    }
-
-    /* Поле ввода */
     .input-field {
       background: rgba(255, 255, 255, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.3);
@@ -166,132 +123,63 @@
       font-family: inherit;
       margin: 10px 0;
     }
+    .input-field::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .input-field:focus { outline: none; border-color: #ffd93d; background: rgba(255, 255, 255, 0.25); }
 
-    .input-field::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .input-field:focus {
-      outline: none;
-      border-color: #ffd93d;
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Чат-бот сообщение */
+    /* Чат-бот и таблицы */
     .chat-log {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      padding: 20px;
-      margin: 20px 0;
-      border-left: 4px solid #4caf50;
+      background: rgba(0, 0, 0, 0.3); border-radius: 15px;
+      padding: 20px; margin: 20px 0; border-left: 4px solid #4caf50;
     }
+    .chat-question { color: #ffd93d; font-weight: bold; }
+    .chat-answer { color: #a5d6a5; }
 
-    .chat-question {
-      color: #ffd93d;
-      font-weight: bold;
-    }
-
-    .chat-answer {
-      color: #a5d6a5;
-    }
-
-    /* Тэги */
     .tag {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      margin-right: 8px;
-      margin-top: 10px;
+      display: inline-block; background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px; border-radius: 20px; font-size: 0.8em;
+      margin-right: 8px; margin-top: 10px;
     }
 
-    /* Стили для таблицы прогнозов */
     .prediction-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      overflow: hidden;
+      width: 100%; border-collapse: collapse; margin: 15px 0;
+      background: rgba(0, 0, 0, 0.2); border-radius: 10px; overflow: hidden;
     }
-    
-    .prediction-table th,
-    .prediction-table td {
-      padding: 10px 15px;
-      text-align: left;
+    .prediction-table th, .prediction-table td {
+      padding: 10px 15px; text-align: left;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
-    .prediction-table th {
-      background: rgba(255, 255, 255, 0.15);
-      font-weight: 600;
-    }
-    
-    .prediction-table tr:hover {
-      background: rgba(255, 255, 255, 0.05);
-    }
-    
-    .highlight {
-      background: rgba(255, 217, 61, 0.2);
-      font-weight: 600;
-    }
+    .prediction-table th { background: rgba(255, 255, 255, 0.15); font-weight: 600; }
+    .prediction-table tr:hover { background: rgba(255, 255, 255, 0.05); }
+    .highlight { background: rgba(255, 217, 61, 0.2); font-weight: 600; }
 
-    /* Стили для отчета модели (новый блок) */
     .model-report {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 15px;
-      padding: 20px;
-      margin: 15px 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 0.95em;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      line-height: 1.4;
+      background: rgba(0, 0, 0, 0.3); border-radius: 15px;
+      padding: 20px; margin: 15px 0; border: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'Courier New', Courier, monospace; font-size: 0.95em;
+      overflow-x: auto; white-space: pre-wrap; line-height: 1.4;
     }
-    
-    .metric-highlight {
-      color: #ffd93d;
-      font-weight: bold;
-    }
+    .metric-highlight { color: #ffd93d; font-weight: bold; }
 
     /* Адаптивность */
     @media (max-width: 768px) {
-      .header h1 {
-        font-size: 2em;
-      }
-      
-      .post {
-        padding: 15px;
-      }
-      
-      .post-title {
-        font-size: 1.4em;
-      }
+      .header h1 { font-size: 2em; }
+      .post { padding: 15px; }
+      .post-title { font-size: 1.4em; }
     }
 
-    /* Анимация для новогоднего настроения */
+    /* Снежинки */
     @keyframes snowflake {
       0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
       100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
     }
-
     .snowflake {
-      position: fixed;
-      color: white;
-      user-select: none;
-      pointer-events: none;
-      opacity: 0.7;
-      font-size: 1.5em;
-      animation: snowflake linear infinite;
-      z-index: 1000;
+      position: fixed; color: white; user-select: none; pointer-events: none;
+      opacity: 0.7; font-size: 1.5em; animation: snowflake linear infinite; z-index: 1000;
     }
   </style>
 </head>
 <body>
 
-  <!-- Снежинки (новогодняя атмосфера) -->
   <div id="snowflakes-container"></div>
 
   <div class="container">
@@ -309,22 +197,18 @@
       </div>
     </header>
 
-    <!-- 🆕 НОВЫЙ ПОСТ: 25 марта 2026 (Датасет КАСКО) -->
+    <!--  НОВЫЙ ПОСТ: 25 марта 2026 (Датасет КАСКО) -->
     <article class="post" style="border-left: 4px solid #ff9f43;">
       <div class="post-date">🚗 25 марта 2026</div>
       <h2 class="post-title">Генерация датасета для страхования КАСКО</h2>
       <div class="post-content">
-        <p>🤖 <strong>Результат работы скрипта:</strong> Сгенерировано 1000 записей на основе возраста, стажа и истории ДТП.</p>
+        <p> <strong>Результат работы скрипта:</strong> Сгенерировано 1000 записей на основе возраста, стажа и истории ДТП.</p>
         
         <p>📋 <strong>Первые 10 записей датасета:</strong></p>
         <table class="prediction-table">
           <thead>
             <tr>
-              <th>№</th>
-              <th>age</th>
-              <th>driving_experience_years</th>
-              <th>accidents_count</th>
-              <th>casco_available</th>
+              <th>№</th><th>age</th><th>driving_experience_years</th><th>accidents_count</th><th>casco_available</th>
             </tr>
           </thead>
           <tbody>
@@ -355,7 +239,7 @@ Name: count, dtype: int64
       </div>
     </article>
 
-    <!-- Пост: 25 марта 2026 (Кредитный скоринг) - перемещен ниже -->
+    <!-- Пост: 25 марта 2026 (Кредитный скоринг) -->
     <article class="post" style="border-left: 4px solid #4caf50;">
       <div class="post-date">📈 25 марта 2026</div>
       <h2 class="post-title">Результаты модели кредитного скоринга</h2>
@@ -394,14 +278,10 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
           <li>Прогноз баллов: <strong>50.23</strong> ✨</li>
         </ul>
         
-        <p>📋 <strong>Таблица прогнозов:</strong></p>
+        <p> <strong>Таблица прогнозов:</strong></p>
         <table class="prediction-table">
           <thead>
-            <tr>
-              <th>№</th>
-              <th>Часы подготовки</th>
-              <th>Прогноз баллов</th>
-            </tr>
+            <tr><th>№</th><th>Часы подготовки</th><th>Прогноз баллов</th></tr>
           </thead>
           <tbody>
             <tr><td>0</td><td>1</td><td>12.32</td></tr>
@@ -412,9 +292,7 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
           </tbody>
         </table>
         
-        <p style="font-size: 0.9em; opacity: 0.8;">
-          <em>Модель: LinearRegression | R² = 0.998 | MAE = 1.24</em>
-        </p>
+        <p style="font-size: 0.9em; opacity: 0.8;"><em>Модель: LinearRegression | R² = 0.998 | MAE = 1.24</em></p>
       </div>
     </article>
 
@@ -448,13 +326,13 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
       <div class="post-content">
         <blockquote>«Путешествие в тысячу миль начинается с одного шага» (Лао Цзы)</blockquote>
         <p>Оставляю в прошлом скучную локальную файловую систему ради Всемирной паутины.</p>
-        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-    ">Flaticon</a></small></p>
+        <p><small>Иконки: <a href="https://www.flaticon.com/ru/free-icons/-">Flaticon</a></small></p>
       </div>
     </article>
 
     <!-- Пост: 20 декабря 2025 -->
     <article class="post">
-      <div class="post-date">🎵 20 декабря 2025</div>
+      <div class="post-date"> 20 декабря 2025</div>
       <h2 class="post-title">Рождественские колядки</h2>
       <div class="post-content">
         <p>Поздравляю с наступающим Рождеством 2026!</p>
@@ -467,7 +345,7 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
 
     <!-- Пост: 14 января 2026 -->
     <article class="post">
-      <div class="post-date">🌐 14 января 2026</div>
+      <div class="post-date"> 14 января 2026</div>
       <h2 class="post-title">Контакты</h2>
       <div class="post-content">
         <p>Домен: <strong>KSophia976.github.io</strong></p>
@@ -513,12 +391,12 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
         <label>Введите m или C:</label><br>
         <input type="text" id="input" value="2" class="input-field"><br>
         
-        <button onclick="encrypt()" class="btn">🔒 Зашифровать</button>
-        <button onclick="decrypt()" class="btn">🔓 Расшифровать</button>
+        <button onclick="encrypt()" class="btn"> Зашифровать</button>
+        <button onclick="decrypt()" class="btn"> Расшифровать</button>
         
         <pre id="output" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 10px; margin-top: 15px;"></pre>
         
-        <p style="font-size: 0.8em; opacity: 0.7; word-break: break-all;">n = 259102381787105367293057583697233129367946271257193911301150513669377139993314021329683872638127121339361292933959411577748733119954791126133331553599236134181343727120145903121911025191911111712511911111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111......</p>
+        <p style="font-size: 0.8em; opacity: 0.7; word-break: break-all;">n = 259102381787105367293057583697233129367946271257193911301150513669377139993314021329683872638127121339361292933959411577748733119954791126133331553599236134181343727120145903121911025191911111712511911111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111......</p>
       </div>
     </article>
 
@@ -551,7 +429,7 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
 
     <!-- НОВЫЙ ПОСТ: Листы 12 и 13 (задачи по системам счисления) -->
     <article class="post" style="border-left: 4px solid #00b894;">
-      <div class="post-date">🧮 22 апреля 2026</div>
+      <div class="post-date"> 22 апреля 2026</div>
       <h2 class="post-title">Задачи на системы счисления</h2>
       <div class="post-content">
         <p><strong>📌 Задача 1 (Лист 12):</strong> Девочка написала: у меня есть братья. Всего их – 100. Младшему 1000 лет, а старшему – 1111. Старший учится в 1001 классе. Может ли такое быть?</p>
@@ -574,13 +452,23 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
       </div>
     </article>
 
+    <!-- Блок скачивания файла Excel -->
+    <article class="post" style="text-align: center; border-left: 4px solid #ffd93d;">
+      <div class="post-content">
+        <h3 style="margin-bottom: 15px;">📥 Скачать материалы</h3>
+        <a href="icons/зд4.xlsx" download class="btn" style="font-size: 1.2em; padding: 15px 30px;">
+          📊 Скачать файл зд4.xlsx
+        </a>
+      </div>
+    </article>
+
     <!-- Подвал -->
     <footer style="text-align: center; padding: 30px; opacity: 0.8;">
       <p>✧ Сделано с ❤️ и Pudelinka шрифтом ✧</p>
     </footer>
   </div>
 
-  <!-- Скрипт для снежинок -->
+  <!-- Скрипт для снежинок и RSA -->
   <script>
     function createSnowflake() {
       const snowflake = document.createElement('div');
@@ -592,9 +480,7 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
       snowflake.style.opacity = Math.random() * 0.7 + 0.3;
       document.getElementById('snowflakes-container').appendChild(snowflake);
       
-      setTimeout(() => {
-        snowflake.remove();
-      }, 10000);
+      setTimeout(() => { snowflake.remove(); }, 10000);
     }
 
     setInterval(createSnowflake, 300);
@@ -634,7 +520,6 @@ ROC-AUC: <span class="metric-highlight">1.0000</span>
       document.getElementById('output').innerText = 
         `🔓 Расшифровка: m = ${C}^${d} mod ${n} = ${modExp(C, d, n)}`;
     }
-    <a href="/icons/зд4.xlsx" download>Скачать Excel-файл</a>
   </script>
 </body>
 </html>
